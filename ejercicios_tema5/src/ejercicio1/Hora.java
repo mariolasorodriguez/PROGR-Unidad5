@@ -26,12 +26,12 @@ public class Hora {
     }
 
     boolean setMinutos(int valor) {
-        this.minuto = valor;
+        boolean modificado = false;
         if (minuto != valor) {
-            return false;
-        } else {
-            return true;
+            this.minuto = valor;
+            modificado = true;
         }
+        return modificado;
     }
 
     boolean setHora(int valor) {
@@ -45,6 +45,6 @@ public class Hora {
 
     @Override
     public String toString() {
-        return + hora + ":" + minuto;
+        return +hora + ":" + minuto;
     }
 }
