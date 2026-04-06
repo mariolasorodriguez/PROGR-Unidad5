@@ -1,0 +1,6 @@
+Superclase:
+- Electrodomestico
+Subclases:
+- Lavadora
+- Television
+
