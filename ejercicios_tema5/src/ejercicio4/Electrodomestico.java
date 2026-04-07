@@ -1,10 +1,17 @@
 package ejercicio4;
 
 public class Electrodomestico {
-    private double precioBase = 100;
-    private String color = "blanco";
-    private char consumo = 'F';
-    private double peso = 5;
+
+    enum color {
+        BLANCO, NEGRO, ROJO, AZUL, GRIS
+    }
+
+    enum consumoEnergetico {
+        A, B, C, D, E, F
+    }
+
+    protected double precioBase = 100;
+    protected double peso = 5;
 
 
 }
