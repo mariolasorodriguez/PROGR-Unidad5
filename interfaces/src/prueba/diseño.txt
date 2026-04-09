@@ -1,0 +1,36 @@
+Vivir <<interface>>
++ comer()
++ dormir()
++ hacerRuido()
+
+-------------------
+
+<<abstract>> AnimalDomestico implements Vivir
+# nombre: String
+# raza: String
+# peso: double
+# color: String
+_____________________
++ vacunar()
++ hacerCaso(): boolean
++ comer()
++ dormir()
++ abstract hacerRuido()
+
+-------------------
+
+Perro extends AnimalDomestico
++ sacarPaseo()
+_______________
+hereda:
++ hacerRuido()
++ hacerCaso() : boolean
+
+-------------------------
+
+Gato extends AnimalDomestico
++ toserBolaPelo()
+____________________
+hereda:
++ hacerRuido()
++ hacerCaso() : boolean
