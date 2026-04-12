@@ -1,4 +1,4 @@
-package prueba;
+package ej03;
 
 public class Gato extends AnimalDomestico {
 

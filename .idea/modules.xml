@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PROG-Unidad5.iml" filepath="$PROJECT_DIR$/PROG-Unidad5.iml" />
       <module fileurl="file://$PROJECT_DIR$/ejercicios_tema5/ejercicios_tema5.iml" filepath="$PROJECT_DIR$/ejercicios_tema5/ejercicios_tema5.iml" />
-      <module fileurl="file://$PROJECT_DIR$/interfaces/interfaces.iml" filepath="$PROJECT_DIR$/interfaces/interfaces.iml" />
+      <module fileurl="file://$PROJECT_DIR$/interfaces_analisis/interfaces_analisis.iml" filepath="$PROJECT_DIR$/interfaces_analisis/interfaces_analisis.iml" />
     </modules>
   </component>
 </project>
