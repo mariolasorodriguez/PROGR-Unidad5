@@ -1,0 +1,72 @@
+Titular
+- dni: String
+- nombre: String
+- apellidos: String
+- telefono: String
+_____________________
++ Titular(dni, nombre, apellidos, telefono)
++ getters y setters
++ toString()
+
+-------------------
+
+Transaccion
+- dia: int
+- mes: int
+- año: int
+- concepto: String
+- importe: double
+_____________________
++ Transaccion(dia, mes, año, concepto, importe)
++ getters y setters
++ toString()
+
+-------------------
+
+Operable <<interface>>
++ ingresar(double)
++ retirar(double)
+
+-------------------
+
+<<abstract>> CuentaBancaria implements Operable
+# numeroCuenta: String
+# saldo: double
+# titulares: Titular[]   -> máximo 3, mínimo 1
+_____________________
++ CuentaBancaria(numeroCuenta, titular)
++ ingresar(double)
++ retirar(double)
++ añadirTitular(Titular)
++ borrarTitular(String dni)
++ getSaldo(): double
++ abstract toString()
+
+-------------------
+
+CuentaAhorro extends CuentaBancaria
+- cuotaMantenimiento: double
+- interesAnual: double
+_____________________
++ CuentaAhorro(numeroCuenta, titular, cuotaMantenimiento, interesAnual)
++ calcularSaldoConInteres(): double
++ aplicarCuotaMantenimiento()
++ toString()
+
+-------------------
+
+CuentaCorriente extends CuentaBancaria
+- porcentajeTransaccion: double
+- transacciones: Transaccion[]
+_____________________
++ CuentaCorriente(numeroCuenta, titular, porcentajeTransaccion)
++ añadirTransaccion(Transaccion)
++ getNumeroTransacciones(): int
++ toString()
+
+-------------------
+
+Main
+_____________________
++ Crear una CuentaAhorro y una CuentaCorriente
++ Probar ingresar, retirar, titulares y operaciones específicas
