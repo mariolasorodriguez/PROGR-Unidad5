@@ -1,0 +1,39 @@
+---------------
+<<interface>>
+Comparator<Socio>
+---------------
++ compare(o1: Socio, o2: Socio) : int
+---------------
+
+---------------
+ComparadorNombre
+----------------
++ compare(s1: Socio, s2: Socio) : int
+(Ordena alfabeticamente por nombre)
+----------------
+
+----------------
+ComparadorEdad
+----------------
++ compare(s1: Socio, s2: Socio) : int
+(Ordena por edad de mayor a menor)
+----------------
+
+----------------
+Socio
+----------------
+- nombre: String
+- apellidos: String
+- edad: Int
+_________________
++ Socio(nombre, apellidos, edad)
++ getNombre()
++ getApellidos()
++ getEdad()
++ setNombre()
++ setApellidos()
++ setEdad()
++ toString()
++ equals(Object)
++ hashCode()
+---------------
