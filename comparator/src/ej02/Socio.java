@@ -1,4 +1,4 @@
-package Ej01;
+package ej02;
 
 import java.util.Objects;
 
