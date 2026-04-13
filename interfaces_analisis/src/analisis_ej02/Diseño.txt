@@ -1,0 +1,76 @@
+Prestable <<interface>>
++ prestar(): int   -> devuelve los días de préstamo
+
+-------------------
+
+<<abstract>> Ficha implements Prestable
+# id: int
+# titulo: String
+_____________________
++ Ficha(id, titulo)
++ getId(): int
++ getTitulo(): String
++ setId(int)
++ setTitulo(String)
++ abstract prestar(): int
++ abstract toString()
+
+-------------------
+
+Libro extends Ficha
+- autor: String
+- editorial: String
+_____________________
++ Libro(id, titulo, autor, editorial)
++ getAutor(): String
++ getEditorial(): String
++ setAutor(String)
++ setEditorial(String)
++ prestar(): int   -> 15 días
++ toString()
+
+-------------------
+
+Revista extends Ficha
+- numeroRevista: int
+- añoPublicacion: int
+_____________________
++ Revista(id, titulo, numeroRevista, añoPublicacion)
++ getNumeroRevista(): int
++ getAñoPublicacion(): int
++ setNumeroRevista(int)
++ setAñoPublicacion(int)
++ prestar(): int   -> 10 días
++ toString()
+
+-------------------
+
+DVD extends Ficha
+- director: String
+- año: int
+- tipo: TipoDVD
+_____________________
++ DVD(id, titulo, director, año, tipo)
++ getDirector(): String
++ getAño(): int
++ getTipo(): TipoDVD
++ setDirector(String)
++ setAño(int)
++ setTipo(TipoDVD)
++ prestar(): int   -> 5 días
++ toString()
+
+-------------------
+
+<<enum>> TipoDVD
+  PELICULA
+  DOCUMENTAL
+  SERIE
+
+-------------------
+
+Main
+_____________________
++ Crear un objeto de cada tipo
++ Mostrar su información
++ Mostrar los días de préstamo de cada uno

@@ -1,0 +1,51 @@
+<<abstract>> Contacto
+# nombre: String
+# telefono: String
+_____________________
++ Contacto(nombre, telefono)
++ getNombre(): String
++ getTelefono(): String
++ setTelefono(String)
++ equals(Object)   -> iguales si mismo nombre
++ abstract toString()
+
+-------------------
+
+Persona extends Contacto
+- cumpleaños: String
+_____________________
++ Persona(nombre, telefono, cumpleaños)
++ getCumpleaños(): String
++ setCumpleaños(String)
++ toString()
+
+-------------------
+
+Empresa extends Contacto
+- paginaWeb: String
+_____________________
++ Empresa(nombre, telefono, paginaWeb)
++ getPaginaWeb(): String
++ setPaginaWeb(String)
++ toString()
+
+-------------------
+
+Agenda
+- contactos: Contacto[]
+- numContactos: int
+- MAX_CONTACTOS: int = 100
+_____________________
++ Agenda()
++ añadirContacto(Contacto)
++ borrarContacto(String nombre)
++ buscarContacto(String nombre): Contacto
++ mostrarContactos()
+
+-------------------
+
+Main
+_____________________
++ Crear agenda
++ Añadir personas y empresas
++ Buscar, borrar y mostrar contactos

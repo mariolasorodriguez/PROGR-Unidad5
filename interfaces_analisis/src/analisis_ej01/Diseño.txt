@@ -1,0 +1,89 @@
+Conducible <<interface>>
++ arrancar()
++ parar()
++ subirMarcha()
++ bajarMarcha()
+
+-------------------
+
+<<abstract>> Vehiculo implements Conducible
+# marca: String
+# modelo: String
+# color: String
+# matricula: String
+# motorEncendido: boolean
+# marchaActual: int
+# velocidadActual: int
+_____________________
++ Vehiculo(marca, modelo, color, matricula)
++ abstract arrancar()
++ abstract parar()
++ subirMarcha()
++ bajarMarcha()
++ toString()
+
+Rangos de marcha:
+  1ª:  0  – 30
+  2ª: 30  – 50
+  3ª: 50  – 70
+  4ª: 70  – 100
+  5ª: 100 o más
+
+-------------------
+
+Turismo extends Vehiculo
+- numPlazas: int
+- tipoUso: TipoUso
+_____________________
++ Turismo(marca, modelo, color, matricula, numPlazas, tipoUso)
++ toString()
+hereda:
++ arrancar()
++ parar()
++ subirMarcha()
++ bajarMarcha()
+
+-------------------
+
+Camion extends Vehiculo
+- pesoMaxAutorizado: double
+- mercancíaPeligrosa: boolean
+_____________________
++ Camion(marca, modelo, color, matricula, pesoMaxAutorizado, mercancíaPeligrosa)
++ toString()
+hereda:
++ arrancar()
++ parar()
++ subirMarcha()
++ bajarMarcha()
+
+-------------------
+
+Motocicleta extends Vehiculo
+- cilindrada: int
+_____________________
++ Motocicleta(marca, modelo, color, matricula, cilindrada)
++ requiereCarnet(): boolean   -> cilindrada >= 125
++ toString()
+hereda:
++ arrancar()
++ parar()
++ subirMarcha()
++ bajarMarcha()
+
+-------------------
+
+<<enum>> TipoUso
+  PROFESIONAL
+  PARTICULAR
+
+-------------------
+
+Main
+_____________________
+1. Crear turismo en reposo
+2. Arrancar
+3. Pedir velocidad objetivo por teclado → subir marchas hasta alcanzarla
+4. Pedir tiempo de espera por teclado → mantener velocidad
+5. Bajar marchas hasta parar
+6. Punto muerto → apagar motor

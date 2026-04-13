@@ -1,4 +1,4 @@
-package prueba;
+package ej03;
 
 public abstract class AnimalDomestico implements Vivir {
 
