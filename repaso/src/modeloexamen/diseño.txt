@@ -1,0 +1,14 @@
+-----------------
+    Producto
+-----------------
+# String nombreComercial
+# String marca
+# double precio
+# boolean encendido (inicializado a false)
+-----------------
+
+
+-----------------
+    Altavoz
+-----------------
+

@@ -9,5 +9,4 @@ public interface Conducible {
     void subirMarcha();
 
     void bajarMarcha();
-
 }
