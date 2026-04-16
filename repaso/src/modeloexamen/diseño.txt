@@ -1,14 +1,33 @@
------------------
-    Producto
------------------
+------------------------------------------------------------------
+<<abstract>> Class Dispositivo implements Comparable<Dispositivo>
+------------------------------------------------------------------
 # String nombreComercial
 # String marca
 # double precio
 # boolean encendido (inicializado a false)
------------------
+__________________________________________________________________
++ encender();
++ apagar();
++ toString();
++ equals();
+------------------------------------------------------------------
+
+--------------------------------
+Interface Alertable
+--------------------------------
++ activarAlerta(String mensaje);
++ desactivarAlerta();
++ boolean isAlertaActiva();
+--------------------------------
 
 
------------------
-    Altavoz
------------------
+--------------------------------
+Interface Ajustable
+--------------------------------
++ subir();
++ bajar();
 
+
+--------------------------------
+Class Altavoz
+--------------------------------
