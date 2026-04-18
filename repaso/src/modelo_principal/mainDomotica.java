@@ -15,36 +15,36 @@ public class mainDomotica {
 
         System.out.println("### Catálogo ordenado por precio:");
         Arrays.sort(catalogo);
-        for (DispositivoInteligente d : catalogo) {
-            System.out.println(d.toString());
+        for (DispositivoInteligente dispositivo : catalogo) {
+            System.out.println(dispositivo.toString());
         }
 
         System.out.println("\n### Iniciando pruebas de dispositivos...");
-        for (DispositivoInteligente d : catalogo) {
-            System.out.println("\n>>> Probando: " + d.getNombreComercial());
+        for (DispositivoInteligente dispositivo : catalogo) {
+            System.out.println("\n>>> Probando: " + dispositivo.getNombreComercial());
 
-            d.encenderDispositivo();
+            dispositivo.encenderDispositivo();
 
             try {
-                if (d instanceof Altavoz) {
-                    Altavoz a = (Altavoz) d;
+                if (dispositivo instanceof Altavoz) {
+                    Altavoz a = (Altavoz) dispositivo;
                     a.subirNivel();
                     a.subirNivel();
                     System.out.println("Asistente: " + a.getNombreAsistente());
 
-                } else if (d instanceof Luces) {
-                    Luces l = (Luces) d;
+                } else if (dispositivo instanceof Luces) {
+                    Luces l = (Luces) dispositivo;
                     l.subirNivel();
                     l.setColor("Azul Neón");
                     System.out.println("Brillo subido y color cambiado.");
 
-                } else if (d instanceof Termostato) {
-                    Termostato t = (Termostato) d;
+                } else if (dispositivo instanceof Termostato) {
+                    Termostato t = (Termostato) dispositivo;
                     t.cambiarModoFuncionamiento();
                     t.activarAlerta("Revisión de caldera pendiente");
 
-                } else if (d instanceof Camara) {
-                    Camara c = (Camara) d;
+                } else if (dispositivo instanceof Camara) {
+                    Camara c = (Camara) dispositivo;
                     c.iniciarGrabacion();
                     c.activarAlerta("Movimiento detectado en zona norte");
                 }
@@ -52,7 +52,7 @@ public class mainDomotica {
                 System.out.println(e.getMessage());
             }
 
-            System.out.println(d.toString());
+            System.out.println(dispositivo.toString());
         }
 
         System.out.println("\n### Apartado D: Forzando error en dispositivo apagado...");

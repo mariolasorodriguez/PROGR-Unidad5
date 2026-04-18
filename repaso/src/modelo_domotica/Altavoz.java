@@ -1,5 +1,9 @@
 package modelo_domotica;
 
+/**
+ * Representa un altavoz inteligente en el catálogo.
+ * Es una clase concreta que hereda de DispositivoInteligente e implementa la interfaz Ajustable.
+ */
 public class Altavoz  extends DispositivoInteligente implements Ajustable {
 
     final int VOLUMEN_PREDETERMINADO = 30;

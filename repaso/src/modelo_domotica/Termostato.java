@@ -1,5 +1,9 @@
 package modelo_domotica;
 
+/**
+ * Representa un termostato inteligente en el catálogo.
+ * Implementa la interfaz Alertable para gestionar avisos del sistema.
+ */
 public class Termostato extends DispositivoInteligente implements Alertable {
 
     private final String MODO_INVIERNO = "Invierno";
@@ -11,6 +15,13 @@ public class Termostato extends DispositivoInteligente implements Alertable {
     private boolean alertaActiva;
     private String mensajeAlerta;
 
+    /**
+     * Constructor del Termostato.
+     * @param nombreComercial Nombre comercial del termostato.
+     * @param marca Marca del dispositivo.
+     * @param precio Precio de venta.
+     * @param temperaturaObjetivo Inicializa la temperatura deseada por el usuario.
+     */
     public Termostato(String nombreComercial, String marca, double precio, double temperaturaObjetivo) {
         super(nombreComercial, marca, precio);
         this.temperaturaObjetivo = temperaturaObjetivo;
@@ -75,16 +86,26 @@ public class Termostato extends DispositivoInteligente implements Alertable {
         this.mensajeAlerta = "";
     }
 
+    /**
+     * Consulta si existe alguna alerta activa en el dispositivo.
+     * @return true si hay alerta, false en caso contrario.
+     */
     @Override
     public boolean isAlertaActiva() {
         return this.alertaActiva;
     }
 
+    /**
+     * Enciende el termostato.
+     */
     @Override
     public void encenderDispositivo() {
         this.estado = true;
     }
 
+    /**
+     * Apaga el termostato.
+     */
     @Override
     public void apagarDispositivo() {
         this.estado = false;
@@ -92,6 +113,10 @@ public class Termostato extends DispositivoInteligente implements Alertable {
         this.mensajeAlerta = "";
     }
 
+    /**
+     * Devuelve una cadena de texto con toda la información del termostato.
+     * @return Información base junto con temperatura, modo y alertas (si las hay).
+     */
     @Override
     public String toString() {
         String infoTermostato = super.toString() + " | " + temperaturaObjetivo + "ºC | " + modoFuncionamiento;
