@@ -65,6 +65,73 @@ public class mainDomotica {
             System.err.println("Captura esperada: " + e.getMessage());
         }
 
+        /* Con arraylist
+        public static void main(String[] args) {
+        //Declarar tabla y rellenarla con uno de cada tipo
+        List<Dispositivo> catalogo = new ArrayList<>();
+
+        catalogo.add(new Altavoz("Echo Dot", "Amazon", 59.99, "Alexa"));
+        catalogo.add(new Luz("Hue Bulb", "Philips", 19.50, "Blanco Cálido"));
+        catalogo.add(new Termostato("Nest", "Google", 249.00, 21.5));
+        catalogo.add(new Camara("Stick Up Cam", "Ring", 99.00, "1080p"));
+
+        //Ordenar la tabla por precio e imprimirla
+        Collections.sort(catalogo);
+        System.out.println("--- CATÁLOGO ORDENADO POR PRECIO ---");
+        for (Dispositivo d : catalogo) {
+            System.out.println(d);
+        }
+        System.out.println();
+
+        //Recorrer la tabla, encender y aplicar acciones específicas
+        System.out.println("--- EJECUTANDO ACCIONES ---");
+        for (Dispositivo d : catalogo) {
+            try {
+                d.encender(); // Todos se encienden primero
+
+                // Usamos instanceof para saber qué acciones específicas hacer
+                if (d instanceof Altavoz) {
+                    Altavoz a = (Altavoz) d;
+                    a.subir(); // Subir volumen dos veces
+                    a.subir();
+                    System.out.println("Asistente del altavoz: " + a.getAsistente());
+                }
+                else if (d instanceof Luz) {
+                    Luz l = (Luz) d;
+                    l.subir();
+                    l.setColor("Azul");
+                }
+                else if (d instanceof Termostato) {
+                    Termostato t = (Termostato) d;
+                    t.cambiarModo("Invierno");
+                    t.emitirAlerta("Temperatura baja");
+                }
+                else if (d instanceof Camara) {
+                    Camara c = (Camara) d;
+                    c.iniciarGrabacion();
+                    c.emitirAlerta("Movimiento detectado");
+                }
+
+                System.out.println(d);
+
+            } catch (DispositivoApagadoException e) {
+                System.out.println(e.getMessage()); //
+            }
+        }
+        System.out.println();
+
+        // d) Escoge un altavoz, apágalo e intenta subir volumen
+        System.out.println("--- PRUEBA DE ERROR (APAGADO) ---");
+        Altavoz prueba = new Altavoz("HomePod", "Apple", 349.00, "Siri");
+        prueba.apagar();
+        try {
+            prueba.subir();
+        } catch (DispositivoApagadoException e) {
+            System.out.println("Captura del error: " + e.getMessage());
+        }
+    }
+         */
+
     }
 }
 
