@@ -1,0 +1,120 @@
+Alertable <<interface>>
++ activarAlerta(mensaje: String)
++ desactivarAlerta()
++ isAlertaActiva(): boolean
+
+-------------------
+
+Ajustable <<interface>>
++ subirNivel()
++ bajarNivel()
+
+-------------------
+
+<<abstract>> DispositivoInteligente implements Comparable
+# nombreComercial: String
+# marca: String
+# precio: double
+# estado: boolean
+_____________________
++ DispositivoInteligente(nombreComercial, marca, precio)
++ getNombreComercial(): String
++ getMarca(): String
++ getPrecio(): double
++ isEstado(): boolean
++ abstract encenderDispositivo()
++ abstract apagarDispositivo()
++ toString(): String
++ equals(Object): boolean
++ compareTo(DispositivoInteligente): int
+
+-------------------
+
+Camara extends DispositivoInteligente implements Alertable
+- estaGrabando: boolean
+- alertaActiva: boolean
+- mensajeAlerta: String
+- resolucion: String
+_____________________
++ Camara(nombreComercial, marca, precio, resolucion)
++ isEstaGrabando(): boolean
++ getResolucion(): String
++ setResolucion(String)
++ getMensajeAlerta(): String
++ iniciarGrabacion()
++ detenerGrabacion()
++ activarAlerta(String)
++ desactivarAlerta()
++ isAlertaActiva(): boolean
++ encenderDispositivo()
++ apagarDispositivo()
++ toString(): String
+
+-------------------
+
+Termostato extends DispositivoInteligente implements Alertable
+- MODO_INVIERNO: String
+- MODO_VERANO: String
+- temperaturaObjetivo: double
+- modoFuncionamiento: String
+- alertaActiva: boolean
+- mensajeAlerta: String
+_____________________
++ Termostato(nombreComercial, marca, precio, temperaturaObjetivo)
++ getTemperaturaObjetivo(): double
++ setTemperaturaObjetivo(double)
++ getModoFuncionamiento(): String
++ getMensajeAlerta(): String
++ cambiarModoFuncionamiento()
++ activarAlerta(String)
++ desactivarAlerta()
++ isAlertaActiva(): boolean
++ encenderDispositivo()
++ apagarDispositivo()
++ toString(): String
+
+-------------------
+
+Luces extends DispositivoInteligente implements Ajustable
+~ BRILLO_PREDETERMINADO: int
+~ MAXIMO_BRILLO: int
+~ MINIMO_BRILLO: int
+~ BRILLO_INCREMENTADO: int
+- color: String
+- nivelBrillo: int
+_____________________
++ Luces(nombreComercial, marca, precio, color)
++ getColor(): String
++ getNivelBrillo(): int
++ setColor(String)
++ subirNivel()
++ bajarNivel()
++ encenderDispositivo()
++ apagarDispositivo()
++ toString(): String
+
+-------------------
+
+Altavoz extends DispositivoInteligente implements Ajustable
+~ VOLUMEN_PREDETERMINADO: int
+~ MAXIMO_VOLUMEN: int
+~ MINIMO_VOLUMEN: int
+~ VOLUMEN_INCREMENTADO: int
+- nombreAsistente: String
+- nivelVolumen: int
+_____________________
++ Altavoz(nombreComercial, marca, precio, nombreAsistente)
++ getNombreAsistente(): String
++ getNivelVolumen(): int
++ setNombreAsistente(String)
++ subirNivel()
++ bajarNivel()
++ encenderDispositivo()
++ apagarDispositivo()
++ toString(): String
+
+-------------------
+
+DispositivoApagadoException extends Exception
+_____________________
++ DispositivoApagadoException()
